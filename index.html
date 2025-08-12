@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Preview Studio</title>
+    <link rel="stylesheet" href="./../library/fontawesome-7.0.0-lip/css/all.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="load.css" type="text/css" media="all" />
+</head>
+<body>
+  <div class="loading-screen" id="loadingScreen">
+    <div class="spinner">
+      <img src="load.svg" alt="load" />
+    </div>
+  </div>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <i class="fas fa-file-code fa-lg"></i>
+                File Preview Studio
+            </div>
+            <div class="navbar-controls">
+                <button class="navbar-btn" id="historyToggle" title="Show History">
+                    <i class="fas fa-history"></i>
+                </button>
+                <button class="navbar-btn" id="themeToggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="dropdown">
+                    <button class="navbar-btn dropdown-toggle" id="menuToggle">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="#" class="dropdown-item" id="copyCodeBtn">
+                            <i class="fas fa-copy"></i>
+                            Copy Code
+                        </a>
+                        <a href="#" class="dropdown-item" id="showHistoryBtn">
+                            <i class="fas fa-history"></i>
+                            Show History
+                        </a>
+                        <a href="#" class="dropdown-item" id="toggleThemeBtn">
+                            <i class="fas fa-palette"></i>
+                            Toggle Theme
+                        </a>
+                        <div style="border-top: 1px solid #aaa; margin: 8px 0;"></div>
+                        <a href="https://instagram.com" class="dropdown-item" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            Instagram
+                        </a>
+                        <a href="https://tiktok.com" class="dropdown-item" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                            TikTok
+                        </a>
+                         <div style="border-top: 1px solid #aaa; margin: 8px 0;"></div>
+                        <a href="./landing-page.html" class="dropdown-item"
+                        target="_blank"><i class="fas fa-bars"></i> Other</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Upload Section -->
+        <div class="upload-section animate-fade-up">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="upload-text">Drop your file here</div>
+                <div class="upload-subtext">or click to browse</div>
+                <button class="browse-btn">
+                    <i class="fas fa-folder-open"></i>
+                    Browse Files
+                </button>
+                <input type="file" id="fileInput" class="file-input">
+            </div>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section animate-fade-up" style="animation-delay: 0.2s;">
+            <div class="preview-header">
+                <div class="preview-title">
+                    <i class="fas fa-eye"></i>
+                    File Preview
+                </div>
+                <button class="copy-btn" id="copyBtn" style="display: none;">
+                    <i class="fas fa-copy"></i>
+                    Copy Code
+                </button>
+            </div>
+            
+            <div class="file-stats" id="fileStats" style="display: none;"></div>
+            
+            <div class="file-content" id="fileContent">
+                <div class="empty-state">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>No file selected</h3>
+                    <p>Upload a file to see its preview here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- History Panel -->
+    <div class="history-panel" id="historyPanel">
+        <div class="history-header">
+            <div class="history-title">
+                <i class="fas fa-history"></i>
+                Recent Files
+            </div>
+            <button class="close-history" id="closeHistory">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="history-content" id="historyContent">
+            <div class="empty-state">
+                <i class="fas fa-inbox"></i>
+                <h4>No history yet</h4>
+                <p>Files you preview will appear here</p>
+            </div>
+        </div>
+    </div>
+
+  <script src="script.js" type="text/javascript" charset="utf-8"></script>
+  <script src="load.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
